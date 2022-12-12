@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
-const pkg = require('../../package.json')
+//const pkg = require('../../package.json')
 
-const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
+// const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
 const config = {
   logging: false
@@ -21,5 +21,5 @@ if(process.env.DATABASE_URL){
 }
 
 const db = new Sequelize(
-  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`, config)
+  `postgres://vsamaru@ep-weathered-mouse-851080.eu-central-1.aws.neon.tech/v`, config)
 module.exports = db
